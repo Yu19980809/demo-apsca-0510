@@ -1,4 +1,4 @@
-import { ElementRef, useRef } from 'react'
+import { ElementRef, useRef, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
 import { frqList } from '@/lib/constants'
@@ -6,10 +6,15 @@ import Topbar from '@/components/global/top-bar'
 import CodeArea from '@/components/global/code-area'
 import QuestionArea from '@/components/frq/question-area'
 import { TopbarType } from '@/lib/types'
+import Description from '@/components/global/description'
+import VerticalResizeBar from '@/components/global/vertical-resize-bar'
+import Code from '@/components/global/code'
 
 const FrqQuestion = () => {
   const { id } = useParams()
   const frq = frqList.filter(item => item.questionId === id)[0]
+
+  const [isDescCollapsed, setIsDescCollapsed] = useState<boolean>(false)
 
   const textRef = useRef<ElementRef<'div'>>(null)
   const codeRef = useRef<ElementRef<'div'>>(null)
@@ -52,7 +57,7 @@ const FrqQuestion = () => {
     <div className="h-full">
       <Topbar type={TopbarType.FRQ} frqData={frq} />
 
-      <div className="flex gap-x-4 w-full h-[calc(100vh-80px)] md:px-20 px-4 py-10">
+      {/* <div className="flex gap-x-4 w-full h-[calc(100vh-80px)] md:px-20 px-4 py-10">
         <div
           ref={textRef}
           className="flex flex-col h-full"
@@ -69,6 +74,12 @@ const FrqQuestion = () => {
         >
           <CodeArea showExplain showSubmit methods={3} />
         </div>
+      </div> */}
+
+      <div className="flex w-full h-[calc(100vh-80px)] md:px-20 px-4 py-4">
+        <Description isCollapsed={isDescCollapsed} setIsCollapsed={setIsDescCollapsed} />
+        <VerticalResizeBar />
+        <Code />
       </div>
     </div>
   )

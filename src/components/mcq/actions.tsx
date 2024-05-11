@@ -3,7 +3,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { StarIcon, StarFilledIcon } from '@radix-ui/react-icons'
 
 import { ChoiceLabel, PracticeFrqQuestion } from '@/lib/types'
-import ConfirmModal from '@/components/global/comfirm-modal'
+import ConfirmModal from '@/components/modals/comfirm-modal'
 import { Button } from '@/components/ui/button'
 import { Hint } from '@/components/ui/hint'
 
@@ -40,7 +40,7 @@ const Actions = ({
   setIsFinished
 }: Props) => {
   const len = data.length
-  const currentQuestion = data[activeQuestionIndex]
+  // const currentQuestion = data[activeQuestionIndex]
 
   const [modalOpen, setModalOpen] = useState<boolean>(false)
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false)

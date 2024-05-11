@@ -1,4 +1,29 @@
-import { ChoiceLabel, FrqTab } from '@/lib/types'
+import { Award, FlaskConical, ScrollText, Sparkles } from 'lucide-react'
+
+import { ChoiceLabel, FrqTab, QuestionTab } from '@/lib/types'
+
+export const descriptionTabs = [
+  {
+    label: 'Description',
+    value: QuestionTab.DESCRIPTION,
+    icon: ScrollText
+  },
+  {
+    label: 'Solutions',
+    value: QuestionTab.SOLUTIONS,
+    icon: FlaskConical
+  },
+  {
+    label: 'Result',
+    value: QuestionTab.RESULT,
+    icon: Award
+  },
+  {
+    label: 'Explanation',
+    value: QuestionTab.EXPLANATION,
+    icon: Sparkles
+  }
+]
 
 export const mcqQuestions = [
   {

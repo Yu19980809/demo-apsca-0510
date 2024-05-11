@@ -28,6 +28,13 @@ export enum TopbarType {
   MCQ = 'MCQ'
 }
 
+export enum QuestionTab {
+  DESCRIPTION = 'Description',
+  SOLUTIONS = 'Solution',
+  RESULT = 'Result',
+  EXPLANATION = 'Explanation'
+}
+
 export type Choice = {
   label: ChoiceLabel
   content: string

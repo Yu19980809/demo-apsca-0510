@@ -68,7 +68,7 @@ const Knowledge = () => {
   }
 
   return (
-    <div className="h-screen">
+    <div className="h-screen bg-accent">
       <Container className="flex gap-x-1">
         <div
           ref={textRef}

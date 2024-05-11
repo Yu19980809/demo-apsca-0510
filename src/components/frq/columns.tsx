@@ -3,7 +3,7 @@
 import { ColumnDef } from '@tanstack/react-table'
 
 import { Frq } from '@/lib/types'
-import { DataTableColumnHeader } from '@/components/global/data-table-column-header'
+import { DataTableColumnHeader } from '@/components/data-table/data-table-column-header'
 import { Link } from 'react-router-dom'
 
 export const columns: ColumnDef<Frq>[] = [

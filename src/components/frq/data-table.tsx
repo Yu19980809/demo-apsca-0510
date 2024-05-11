@@ -20,7 +20,7 @@ import {
 } from '@/components/ui/table'
 
 import { DataTableToolbar } from './data-table-toolbar'
-import { DataTablePagination } from '@/components/global/data-table-pagination'
+import { DataTablePagination } from '@/components/data-table/data-table-pagination'
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
