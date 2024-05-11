@@ -5,6 +5,7 @@ import { frqList } from '@/lib/constants'
 import Topbar from '@/components/global/top-bar'
 import CodeArea from '@/components/global/code-area'
 import QuestionArea from '@/components/frq/question-area'
+import { TopbarType } from '@/lib/types'
 
 const FrqQuestion = () => {
   const { id } = useParams()
@@ -49,7 +50,7 @@ const FrqQuestion = () => {
 
   return (
     <div className="h-full">
-      <Topbar data={frq} />
+      <Topbar type={TopbarType.FRQ} frqData={frq} />
 
       <div className="flex gap-x-4 w-full h-[calc(100vh-80px)] md:px-20 px-4 py-10">
         <div

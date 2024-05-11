@@ -1,21 +1,30 @@
 import { useState } from 'react'
+import { StarIcon, StarFilledIcon } from '@radix-ui/react-icons'
 import {
+  AlarmClockCheck,
   ChevronLeft,
   CirclePause,
   CirclePlay,
   RotateCcw,
-  Star,
-  Timer
 } from 'lucide-react'
 
-import { cn } from '@/lib/utils'
-import { Frq } from '@/lib/types'
+import { Frq, PracticeFrqQuestion, TopbarType } from '@/lib/types'
 import { ModeToggle } from './mode-toggle'
 import { Hint } from '@/components/ui/hint'
 import { Button } from '@/components/ui/button'
 import UserButton from '@/components/layout/navbar/user-button'
 
-const Topbar = ({ data }: { data: Frq }) => {
+type Props = {
+  type: TopbarType
+  mcqData?: PracticeFrqQuestion
+  frqData?: Frq
+}
+
+const Topbar = ({
+  type,
+  mcqData,
+  frqData
+}: Props) => {
   let timer: any
 
   const [timerSeconds, setTimerSeconds] = useState<number>(0)
@@ -65,33 +74,35 @@ const Topbar = ({ data }: { data: Frq }) => {
   return (
     <nav className="flex justify-center items-center w-full h-20 border-b">
       <div className="flex justify-between items-center w-full md:px-20 px-4">
-        <span>{data.name}</span>
+        <span>
+          {type === TopbarType.FRQ ? frqData?.name : mcqData?.name}
+        </span>
 
         <div className="flex items-center md:gap-x-4 gap-x-2">
           {!isTimerShow && (
-            <Button variant="outline" size="icon" onClick={onTimerStart}>
-              <Hint
-                asChild
-                label={isTimerHide ? 'Show the clock' : 'Start the clock'}
-                side="bottom"
-                align="center"
-              >
-                <Timer className="w-5 h-5" />
-              </Hint>
-            </Button>
+            <Hint
+              asChild
+              label={isTimerHide ? 'Show the clock' : 'Start the clock'}
+              side="bottom"
+              align="center"
+            >
+              <Button variant="outline" size="icon" onClick={onTimerStart}>
+                <AlarmClockCheck className="w-5 h-5" />
+              </Button>
+            </Hint>
           )}
 
           {isTimerShow && (
             <div className="flex items-center gap-x-1">
-              <Button
-                onClick={onTimerHide}
-                variant="outline"
-                size="icon"
-              >
-                <Hint asChild label="Hide" side="bottom" align="center">
-                  <ChevronLeft className="w-5 h-5" />
-                </Hint>
-              </Button>
+              <Hint asChild label="Hide" side="bottom" align="center">
+                <Button
+                  onClick={onTimerHide}
+                  variant="outline"
+                  size="icon"
+                >
+                    <ChevronLeft className="w-5 h-5" />
+                </Button>
+              </Hint>
 
               <Button
                 onClick={onTimerPause}
@@ -109,32 +120,37 @@ const Topbar = ({ data }: { data: Frq }) => {
                 </div>
               </Button>
 
-              <Button
-                onClick={onTimerReset}
-                variant="outline"
-                size="icon"
-              >
-                <Hint asChild label="Reset" side="bottom" align="center">
-                  <RotateCcw className="w-5 h-5" />
-                </Hint>
-              </Button>
+              <Hint asChild label="Reset" side="bottom" align="center">
+                <Button
+                  onClick={onTimerReset}
+                  variant="outline"
+                  size="icon"
+                >
+                    <RotateCcw className="w-5 h-5" />
+                </Button>
+              </Hint>
             </div>
           )}
 
-          <Button
-            onClick={onStar}
-            variant="outline"
-            size="icon"
-          >
+          {type === TopbarType.FRQ && (
             <Hint
               asChild
-              label={isStarred ? 'Cancel star' : 'Star current FRQ'}
+              label={isStarred ? 'Cancel star' : 'Star current question'}
               side="bottom"
               align="center"
             >
-              <Star className={cn('w-5 h-5', isStarred && 'text-yellow-500')} />
+              <Button
+                onClick={onStar}
+                variant="outline"
+                size="icon"
+              >
+                <>
+                  {!isStarred && <StarIcon className="w-5 h-5" />}
+                  {!!isStarred && <StarFilledIcon className="w-5 h-5 text-yellow-500" />}
+                </>
+              </Button>
             </Hint>
-          </Button>
+          )}
         </div>
 
         <div className="flex items-center md:gap-x-4 gap-x-2">

@@ -16,6 +16,33 @@ export enum McqMode {
   CUSTOM = 'Custom (Select the units you want to practice)'
 }
 
+export enum ChoiceLabel {
+  A = 'A',
+  B = 'B',
+  C = 'C',
+  D = 'D'
+}
+
+export enum TopbarType {
+  FRQ = 'FRQ',
+  MCQ = 'MCQ'
+}
+
+export type Choice = {
+  label: ChoiceLabel
+  content: string
+}
+
+export type PracticeFrqQuestion = {
+  name: string
+  description: string
+  isFinished: boolean
+  isMarked: boolean
+  isStared: boolean
+  userAnswer: ChoiceLabel | null
+  choices: Choice[]
+}
+
 export type Knowledge = {
   id: string
   number: string

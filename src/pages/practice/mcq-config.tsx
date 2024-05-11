@@ -22,9 +22,12 @@ import { Label } from '@/components/ui/label'
 import { Checkbox } from '@/components/ui/checkbox'
 import { syllabus } from '@/lib/constants'
 import { Textarea } from '@/components/ui/textarea'
+import { useNavigate } from 'react-router-dom'
 
 
 const McqConfig = () => {
+  const navigate = useNavigate()
+
   const units = syllabus.map(item => item.unitName)
 
   const [isLoading, setIsLoading] = useState<boolean>(false)
@@ -43,6 +46,7 @@ const McqConfig = () => {
     setIsLoading(true)
     console.log('submit', values)
     form.reset()
+    navigate('/practice/mcq/questions')
   }
 
   return (

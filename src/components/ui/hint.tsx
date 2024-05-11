@@ -28,7 +28,7 @@ export const Hint = ({
         </TooltipTrigger>
         
         <TooltipContent 
-          className="m-3 bg-secondary" 
+          className="max-w-[250px] m-3 bg-secondary" 
           side={side}
           align={align}
         >

@@ -1,4 +1,787 @@
-import { FrqTab } from '@/lib/types'
+import { ChoiceLabel, FrqTab } from '@/lib/types'
+
+export const mcqQuestions = [
+  {
+    name: 'question name 1',
+    description: 'question description 1',
+    isFinished: false,
+    isMarked: false,
+    isStared: false,
+    userAnswer: null,
+    choices: [
+      {
+        label: ChoiceLabel.A,
+        content: 'Choice A'
+      },
+      {
+        label: ChoiceLabel.B,
+        content: 'Choice B'
+      },
+      {
+        label: ChoiceLabel.C,
+        content: 'Choice C'
+      },
+      {
+        label: ChoiceLabel.D,
+        content: 'Choice D'
+      }
+    ]
+  },
+  {
+    name: 'question name 2',
+    description: 'question description 2',
+    isFinished: false,
+    isMarked: false,
+    isStared: false,
+    userAnswer: null,
+    choices: [
+      {
+        label: ChoiceLabel.A,
+        content: 'Choice A'
+      },
+      {
+        label: ChoiceLabel.B,
+        content: 'Choice B'
+      },
+      {
+        label: ChoiceLabel.C,
+        content: 'Choice C'
+      },
+      {
+        label: ChoiceLabel.D,
+        content: 'Choice D'
+      }
+    ]
+  },
+  {
+    name: 'question name 3',
+    description: 'question description 3',
+    isFinished: false,
+    isMarked: false,
+    isStared: false,
+    userAnswer: null,
+    choices: [
+      {
+        label: ChoiceLabel.A,
+        content: 'Choice A'
+      },
+      {
+        label: ChoiceLabel.B,
+        content: 'Choice B'
+      },
+      {
+        label: ChoiceLabel.C,
+        content: 'Choice C'
+      },
+      {
+        label: ChoiceLabel.D,
+        content: 'Choice D'
+      }
+    ]
+  },
+  {
+    name: 'question name 4',
+    description: 'question description 4',
+    isFinished: false,
+    isMarked: false,
+    isStared: false,
+    userAnswer: null,
+    choices: [
+      {
+        label: ChoiceLabel.A,
+        content: 'Choice A'
+      },
+      {
+        label: ChoiceLabel.B,
+        content: 'Choice B'
+      },
+      {
+        label: ChoiceLabel.C,
+        content: 'Choice C'
+      },
+      {
+        label: ChoiceLabel.D,
+        content: 'Choice D'
+      }
+    ]
+  },
+  {
+    name: 'question name 5',
+    description: 'question description 5',
+    isFinished: false,
+    isMarked: false,
+    isStared: false,
+    userAnswer: null,
+    choices: [
+      {
+        label: ChoiceLabel.A,
+        content: 'Choice A'
+      },
+      {
+        label: ChoiceLabel.B,
+        content: 'Choice B'
+      },
+      {
+        label: ChoiceLabel.C,
+        content: 'Choice C'
+      },
+      {
+        label: ChoiceLabel.D,
+        content: 'Choice D'
+      }
+    ]
+  },
+  {
+    name: 'question name 6',
+    description: 'question description 6',
+    isFinished: false,
+    isMarked: false,
+    isStared: false,
+    userAnswer: null,
+    choices: [
+      {
+        label: ChoiceLabel.A,
+        content: 'Choice A'
+      },
+      {
+        label: ChoiceLabel.B,
+        content: 'Choice B'
+      },
+      {
+        label: ChoiceLabel.C,
+        content: 'Choice C'
+      },
+      {
+        label: ChoiceLabel.D,
+        content: 'Choice D'
+      }
+    ]
+  },
+  {
+    name: 'question name 7',
+    description: 'question description 7',
+    isFinished: false,
+    isMarked: false,
+    isStared: false,
+    userAnswer: null,
+    choices: [
+      {
+        label: ChoiceLabel.A,
+        content: 'Choice A'
+      },
+      {
+        label: ChoiceLabel.B,
+        content: 'Choice B'
+      },
+      {
+        label: ChoiceLabel.C,
+        content: 'Choice C'
+      },
+      {
+        label: ChoiceLabel.D,
+        content: 'Choice D'
+      }
+    ]
+  },
+  {
+    name: 'question name 8',
+    description: 'question description 8',
+    isFinished: false,
+    isMarked: false,
+    isStared: false,
+    userAnswer: null,
+    choices: [
+      {
+        label: ChoiceLabel.A,
+        content: 'Choice A'
+      },
+      {
+        label: ChoiceLabel.B,
+        content: 'Choice B'
+      },
+      {
+        label: ChoiceLabel.C,
+        content: 'Choice C'
+      },
+      {
+        label: ChoiceLabel.D,
+        content: 'Choice D'
+      }
+    ]
+  },
+  {
+    name: 'question name 9',
+    description: 'question description 9',
+    isFinished: false,
+    isMarked: false,
+    isStared: false,
+    userAnswer: null,
+    choices: [
+      {
+        label: ChoiceLabel.A,
+        content: 'Choice A'
+      },
+      {
+        label: ChoiceLabel.B,
+        content: 'Choice B'
+      },
+      {
+        label: ChoiceLabel.C,
+        content: 'Choice C'
+      },
+      {
+        label: ChoiceLabel.D,
+        content: 'Choice D'
+      }
+    ]
+  },
+  {
+    name: 'question name 10',
+    description: 'question description 10',
+    isFinished: false,
+    isMarked: false,
+    isStared: false,
+    userAnswer: null,
+    choices: [
+      {
+        label: ChoiceLabel.A,
+        content: 'Choice A'
+      },
+      {
+        label: ChoiceLabel.B,
+        content: 'Choice B'
+      },
+      {
+        label: ChoiceLabel.C,
+        content: 'Choice C'
+      },
+      {
+        label: ChoiceLabel.D,
+        content: 'Choice D'
+      }
+    ]
+  },
+  {
+    name: 'question name 11',
+    description: 'question description 11',
+    isFinished: false,
+    isMarked: false,
+    isStared: false,
+    userAnswer: null,
+    choices: [
+      {
+        label: ChoiceLabel.A,
+        content: 'Choice A'
+      },
+      {
+        label: ChoiceLabel.B,
+        content: 'Choice B'
+      },
+      {
+        label: ChoiceLabel.C,
+        content: 'Choice C'
+      },
+      {
+        label: ChoiceLabel.D,
+        content: 'Choice D'
+      }
+    ]
+  },
+  {
+    name: 'question name 12',
+    description: 'question description 12',
+    isFinished: false,
+    isMarked: false,
+    isStared: false,
+    userAnswer: null,
+    choices: [
+      {
+        label: ChoiceLabel.A,
+        content: 'Choice A'
+      },
+      {
+        label: ChoiceLabel.B,
+        content: 'Choice B'
+      },
+      {
+        label: ChoiceLabel.C,
+        content: 'Choice C'
+      },
+      {
+        label: ChoiceLabel.D,
+        content: 'Choice D'
+      }
+    ]
+  },
+  {
+    name: 'question name 13',
+    description: 'question description 13',
+    isFinished: false,
+    isMarked: false,
+    isStared: false,
+    userAnswer: null,
+    choices: [
+      {
+        label: ChoiceLabel.A,
+        content: 'Choice A'
+      },
+      {
+        label: ChoiceLabel.B,
+        content: 'Choice B'
+      },
+      {
+        label: ChoiceLabel.C,
+        content: 'Choice C'
+      },
+      {
+        label: ChoiceLabel.D,
+        content: 'Choice D'
+      }
+    ]
+  },
+  {
+    name: 'question name 14',
+    description: 'question description 14',
+    isFinished: false,
+    isMarked: false,
+    isStared: false,
+    userAnswer: null,
+    choices: [
+      {
+        label: ChoiceLabel.A,
+        content: 'Choice A'
+      },
+      {
+        label: ChoiceLabel.B,
+        content: 'Choice B'
+      },
+      {
+        label: ChoiceLabel.C,
+        content: 'Choice C'
+      },
+      {
+        label: ChoiceLabel.D,
+        content: 'Choice D'
+      }
+    ]
+  },
+  {
+    name: 'question name 15',
+    description: 'question description 15',
+    isFinished: false,
+    isMarked: false,
+    isStared: false,
+    userAnswer: null,
+    choices: [
+      {
+        label: ChoiceLabel.A,
+        content: 'Choice A'
+      },
+      {
+        label: ChoiceLabel.B,
+        content: 'Choice B'
+      },
+      {
+        label: ChoiceLabel.C,
+        content: 'Choice C'
+      },
+      {
+        label: ChoiceLabel.D,
+        content: 'Choice D'
+      }
+    ]
+  },
+  {
+    name: 'question name 16',
+    description: 'question description 16',
+    isFinished: false,
+    isMarked: false,
+    isStared: false,
+    userAnswer: null,
+    choices: [
+      {
+        label: ChoiceLabel.A,
+        content: 'Choice A'
+      },
+      {
+        label: ChoiceLabel.B,
+        content: 'Choice B'
+      },
+      {
+        label: ChoiceLabel.C,
+        content: 'Choice C'
+      },
+      {
+        label: ChoiceLabel.D,
+        content: 'Choice D'
+      }
+    ]
+  },
+  {
+    name: 'question name 17',
+    description: 'question description 17',
+    isFinished: false,
+    isMarked: false,
+    isStared: false,
+    userAnswer: null,
+    choices: [
+      {
+        label: ChoiceLabel.A,
+        content: 'Choice A'
+      },
+      {
+        label: ChoiceLabel.B,
+        content: 'Choice B'
+      },
+      {
+        label: ChoiceLabel.C,
+        content: 'Choice C'
+      },
+      {
+        label: ChoiceLabel.D,
+        content: 'Choice D'
+      }
+    ]
+  },
+  {
+    name: 'question name 18',
+    description: 'question description 18',
+    isFinished: false,
+    isMarked: false,
+    isStared: false,
+    userAnswer: null,
+    choices: [
+      {
+        label: ChoiceLabel.A,
+        content: 'Choice A'
+      },
+      {
+        label: ChoiceLabel.B,
+        content: 'Choice B'
+      },
+      {
+        label: ChoiceLabel.C,
+        content: 'Choice C'
+      },
+      {
+        label: ChoiceLabel.D,
+        content: 'Choice D'
+      }
+    ]
+  },
+  {
+    name: 'question name 19',
+    description: 'question description 19',
+    isFinished: false,
+    isMarked: false,
+    isStared: false,
+    userAnswer: null,
+    choices: [
+      {
+        label: ChoiceLabel.A,
+        content: 'Choice A'
+      },
+      {
+        label: ChoiceLabel.B,
+        content: 'Choice B'
+      },
+      {
+        label: ChoiceLabel.C,
+        content: 'Choice C'
+      },
+      {
+        label: ChoiceLabel.D,
+        content: 'Choice D'
+      }
+    ]
+  },
+  {
+    name: 'question name 20',
+    description: 'question description 20',
+    isFinished: false,
+    isMarked: false,
+    isStared: false,
+    userAnswer: null,
+    choices: [
+      {
+        label: ChoiceLabel.A,
+        content: 'Choice A'
+      },
+      {
+        label: ChoiceLabel.B,
+        content: 'Choice B'
+      },
+      {
+        label: ChoiceLabel.C,
+        content: 'Choice C'
+      },
+      {
+        label: ChoiceLabel.D,
+        content: 'Choice D'
+      }
+    ]
+  },
+  {
+    name: 'question name 21',
+    description: 'question description 21',
+    isFinished: false,
+    isMarked: false,
+    isStared: false,
+    userAnswer: null,
+    choices: [
+      {
+        label: ChoiceLabel.A,
+        content: 'Choice A'
+      },
+      {
+        label: ChoiceLabel.B,
+        content: 'Choice B'
+      },
+      {
+        label: ChoiceLabel.C,
+        content: 'Choice C'
+      },
+      {
+        label: ChoiceLabel.D,
+        content: 'Choice D'
+      }
+    ]
+  },
+  {
+    name: 'question name 22',
+    description: 'question description 22',
+    isFinished: false,
+    isMarked: false,
+    isStared: false,
+    userAnswer: null,
+    choices: [
+      {
+        label: ChoiceLabel.A,
+        content: 'Choice A'
+      },
+      {
+        label: ChoiceLabel.B,
+        content: 'Choice B'
+      },
+      {
+        label: ChoiceLabel.C,
+        content: 'Choice C'
+      },
+      {
+        label: ChoiceLabel.D,
+        content: 'Choice D'
+      }
+    ]
+  },
+  {
+    name: 'question name 23',
+    description: 'question description 23',
+    isFinished: false,
+    isMarked: false,
+    isStared: false,
+    userAnswer: null,
+    choices: [
+      {
+        label: ChoiceLabel.A,
+        content: 'Choice A'
+      },
+      {
+        label: ChoiceLabel.B,
+        content: 'Choice B'
+      },
+      {
+        label: ChoiceLabel.C,
+        content: 'Choice C'
+      },
+      {
+        label: ChoiceLabel.D,
+        content: 'Choice D'
+      }
+    ]
+  },
+  {
+    name: 'question name 24',
+    description: 'question description 24',
+    isFinished: false,
+    isMarked: false,
+    isStared: false,
+    userAnswer: null,
+    choices: [
+      {
+        label: ChoiceLabel.A,
+        content: 'Choice A'
+      },
+      {
+        label: ChoiceLabel.B,
+        content: 'Choice B'
+      },
+      {
+        label: ChoiceLabel.C,
+        content: 'Choice C'
+      },
+      {
+        label: ChoiceLabel.D,
+        content: 'Choice D'
+      }
+    ]
+  },
+  {
+    name: 'question name 25',
+    description: 'question description 25',
+    isFinished: false,
+    isMarked: false,
+    isStared: false,
+    userAnswer: null,
+    choices: [
+      {
+        label: ChoiceLabel.A,
+        content: 'Choice A'
+      },
+      {
+        label: ChoiceLabel.B,
+        content: 'Choice B'
+      },
+      {
+        label: ChoiceLabel.C,
+        content: 'Choice C'
+      },
+      {
+        label: ChoiceLabel.D,
+        content: 'Choice D'
+      }
+    ]
+  },
+  {
+    name: 'question name 26',
+    description: 'question description 26',
+    isFinished: false,
+    isMarked: false,
+    isStared: false,
+    userAnswer: null,
+    choices: [
+      {
+        label: ChoiceLabel.A,
+        content: 'Choice A'
+      },
+      {
+        label: ChoiceLabel.B,
+        content: 'Choice B'
+      },
+      {
+        label: ChoiceLabel.C,
+        content: 'Choice C'
+      },
+      {
+        label: ChoiceLabel.D,
+        content: 'Choice D'
+      }
+    ]
+  },
+  {
+    name: 'question name 27',
+    description: 'question description 27',
+    isFinished: false,
+    isMarked: false,
+    isStared: false,
+    userAnswer: null,
+    choices: [
+      {
+        label: ChoiceLabel.A,
+        content: 'Choice A'
+      },
+      {
+        label: ChoiceLabel.B,
+        content: 'Choice B'
+      },
+      {
+        label: ChoiceLabel.C,
+        content: 'Choice C'
+      },
+      {
+        label: ChoiceLabel.D,
+        content: 'Choice D'
+      }
+    ]
+  },
+  {
+    name: 'question name 28',
+    description: 'question description 28',
+    isFinished: false,
+    isMarked: false,
+    isStared: false,
+    userAnswer: null,
+    choices: [
+      {
+        label: ChoiceLabel.A,
+        content: 'Choice A'
+      },
+      {
+        label: ChoiceLabel.B,
+        content: 'Choice B'
+      },
+      {
+        label: ChoiceLabel.C,
+        content: 'Choice C'
+      },
+      {
+        label: ChoiceLabel.D,
+        content: 'Choice D'
+      }
+    ]
+  },
+  {
+    name: 'question name 29',
+    description: 'question description 29',
+    isFinished: false,
+    isMarked: false,
+    isStared: false,
+    userAnswer: null,
+    choices: [
+      {
+        label: ChoiceLabel.A,
+        content: 'Choice A'
+      },
+      {
+        label: ChoiceLabel.B,
+        content: 'Choice B'
+      },
+      {
+        label: ChoiceLabel.C,
+        content: 'Choice C'
+      },
+      {
+        label: ChoiceLabel.D,
+        content: 'Choice D'
+      }
+    ]
+  },
+  {
+    name: 'question name 30',
+    description: 'question description 30',
+    isFinished: false,
+    isMarked: false,
+    isStared: false,
+    userAnswer: null,
+    choices: [
+      {
+        label: ChoiceLabel.A,
+        content: 'Choice A'
+      },
+      {
+        label: ChoiceLabel.B,
+        content: 'Choice B'
+      },
+      {
+        label: ChoiceLabel.C,
+        content: 'Choice C'
+      },
+      {
+        label: ChoiceLabel.D,
+        content: 'Choice D'
+      }
+    ]
+  }
+]
 
 export const frqTabs = [
   {
