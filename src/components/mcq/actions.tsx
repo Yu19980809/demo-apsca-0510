@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { StarIcon, StarFilledIcon } from '@radix-ui/react-icons'
 
-import { ChoiceLabel, PracticeFrqQuestion } from '@/lib/types'
+import { ChoiceLabel, PracticeMcqQuestion } from '@/lib/types'
 import ConfirmModal from '@/components/modals/comfirm-modal'
 import { Button } from '@/components/ui/button'
 import { Hint } from '@/components/ui/hint'
@@ -17,49 +17,70 @@ import { Hint } from '@/components/ui/hint'
 // }
 
 type Props = {
-  data: PracticeFrqQuestion[]
-  userAnswer: ChoiceLabel | null
-  isMarked: boolean
-  isStared: boolean
+  data: PracticeMcqQuestion[]
+  // userAnswer: ChoiceLabel | null
+  // isMarked: boolean
+  // isStared: boolean
   activeQuestionIndex: number
   setActiveQuestionIndex: React.Dispatch<number>
-  setIsMarked: React.Dispatch<boolean>
-  setIsStared: React.Dispatch<boolean>
-  setIsFinished: React.Dispatch<boolean>
+  setQuestions: React.Dispatch<PracticeMcqQuestion[]>
+  // setIsMarked: React.Dispatch<boolean>
+  // setIsStared: React.Dispatch<boolean>
+  // setIsFinished: React.Dispatch<boolean>
 }
 
 const Actions = ({
   data,
-  userAnswer,
-  isMarked,
-  isStared,
+  // userAnswer,
+  // isMarked,
+  // isStared,
   activeQuestionIndex,
   setActiveQuestionIndex,
-  setIsMarked,
-  setIsStared,
-  setIsFinished
+  setQuestions
+  // setIsMarked,
+  // setIsStared,
+  // setIsFinished
 }: Props) => {
   const len = data.length
-  // const currentQuestion = data[activeQuestionIndex]
+  const currentQuestion = data[activeQuestionIndex]
 
   const [modalOpen, setModalOpen] = useState<boolean>(false)
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false)
 
   const onPrev = () => {
     setActiveQuestionIndex(activeQuestionIndex - 1)
-    if (!userAnswer) return
-    setIsFinished(true)
+    if (!currentQuestion.userAnswer) return
+    currentQuestion.isFinished = true
+    data[activeQuestionIndex] = currentQuestion
+    setQuestions(data)
+    // if (!userAnswer) return
+    // setIsFinished(true)
   }
 
   const onNext = () => {
     setActiveQuestionIndex(activeQuestionIndex + 1)
-    if (!userAnswer) return
-    setIsFinished(true)
-    
+    if (!currentQuestion.userAnswer) return
+    currentQuestion.isFinished = true
+    data[activeQuestionIndex] = currentQuestion
+    setQuestions(data)
+    // setActiveQuestionIndex(activeQuestionIndex + 1)
+    // console.log('action next', !userAnswer)
+    // if (!userAnswer) return
+    // setIsFinished(true)
   }
 
   const onMark = () => {
-    isMarked ? setIsMarked(false) : setIsFinished(true)
+    if (!currentQuestion.isMarked) {
+      currentQuestion.isMarked = true
+      data[activeQuestionIndex] = currentQuestion
+    } else {
+      currentQuestion.isMarked = false
+      data[activeQuestionIndex] = currentQuestion
+    }
+
+    setQuestions(data)
+
+    // isMarked ? setIsMarked(false) : setIsMarked(true)
 
     // if (!isMarked) {
     //   setIsMarked(true)
@@ -77,7 +98,7 @@ const Actions = ({
   }
 
   const onStar = () => {
-    isStared ? setIsStared(false) : setIsStared(true)
+    // isStared ? setIsStared(false) : setIsStared(true)
 
     // if (isStarred) {
     //   const temp = starList.filter(item => item !== currentQuestion.name)
@@ -110,7 +131,8 @@ const Actions = ({
       <div className="flex items-center gap-x-4">
         <Hint
           asChild
-          label={isStared ? 'Cancel star' : 'Star current question'}
+          // label={isStared ? 'Cancel star' : 'Star current question'}
+          label={currentQuestion.isStared ? 'Cancel star' : 'Star current question'}
           side="bottom"
           align="center"
         >
@@ -120,8 +142,10 @@ const Actions = ({
             size="icon"
           >
             <>
-              {!isStared && <StarIcon className="w-5 h-5" />}
-              {!!isStared && <StarFilledIcon className="w-5 h-5 text-yellow-500" />}
+              {/* {!isStared && <StarIcon className="w-5 h-5" />}
+              {!!isStared && <StarFilledIcon className="w-5 h-5 text-yellow-500" />} */}
+              {!currentQuestion.isStared && <StarIcon className="w-5 h-5" />}
+              {currentQuestion.isStared && <StarFilledIcon className="w-5 h-5 text-yellow-500" />}
             </>
           </Button>
         </Hint>
@@ -133,7 +157,8 @@ const Actions = ({
           label="If you don't sure the answer, you can mark this question, and review it later."
         >
           <Button variant="outline" onClick={onMark}>
-            {isMarked ? 'Cancel mark' : 'Mark'}
+            {/* {isMarked ? 'Cancel mark' : 'Mark'} */}
+            {currentQuestion.isMarked ? 'Cancel mark' : 'Mark'}
           </Button>
         </Hint>
 

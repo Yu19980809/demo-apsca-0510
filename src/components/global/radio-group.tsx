@@ -14,8 +14,8 @@ const RadioGroup = ({ choices, selected, onSelect }: Props) => {
         <div
           onClick={() => onSelect(item)}
           className={cn(
-            'group flex items-center gap-x-2 p-2 pl-4 rounded-md cursor-pointer hover:bg-secondary',
-            selected === item.label && 'bg-secondary'
+            'group flex items-center gap-x-2 p-2 pl-4 rounded-md cursor-pointer hover:bg-emerald-100/80',
+            selected === item.label && 'bg-emerald-100/80'
           )}
         >
           <span className={cn(

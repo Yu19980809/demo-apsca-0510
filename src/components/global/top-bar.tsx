@@ -8,7 +8,7 @@ import {
   RotateCcw,
 } from 'lucide-react'
 
-import { Frq, PracticeFrqQuestion, TopbarType } from '@/lib/types'
+import { TopbarType } from '@/lib/types'
 import { ModeToggle } from './mode-toggle'
 import { Hint } from '@/components/ui/hint'
 import { Button } from '@/components/ui/button'
@@ -16,15 +16,10 @@ import UserButton from '@/components/layout/navbar/user-button'
 
 type Props = {
   type: TopbarType
-  mcqData?: PracticeFrqQuestion
-  frqData?: Frq
+  label: string
 }
 
-const Topbar = ({
-  type,
-  mcqData,
-  frqData
-}: Props) => {
+const Topbar = ({ type, label }: Props) => {
   let timer: any
 
   const [timerSeconds, setTimerSeconds] = useState<number>(0)
@@ -74,9 +69,7 @@ const Topbar = ({
   return (
     <nav className="flex justify-center items-center w-full h-20 border-b">
       <div className="flex justify-between items-center w-full md:px-20 px-4">
-        <span>
-          {type === TopbarType.FRQ ? frqData?.name : mcqData?.name}
-        </span>
+        <span>{label}</span>
 
         <div className="flex items-center md:gap-x-4 gap-x-2">
           {!isTimerShow && (

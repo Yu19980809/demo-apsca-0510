@@ -55,7 +55,7 @@ const FrqQuestion = () => {
 
   return (
     <div className="h-full">
-      <Topbar type={TopbarType.FRQ} frqData={frq} />
+      <Topbar type={TopbarType.FRQ} label={frq.name} />
 
       {/* <div className="flex gap-x-4 w-full h-[calc(100vh-80px)] md:px-20 px-4 py-10">
         <div
@@ -78,7 +78,7 @@ const FrqQuestion = () => {
 
       <div className="flex w-full h-[calc(100vh-80px)] md:px-20 px-4 py-4">
         <Description isCollapsed={isDescCollapsed} setIsCollapsed={setIsDescCollapsed} />
-        <VerticalResizeBar />
+        {!isDescCollapsed ? <VerticalResizeBar /> : <div className="w-3 h-full bg-transparent" />}
         <Code />
       </div>
     </div>

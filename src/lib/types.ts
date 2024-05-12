@@ -40,7 +40,7 @@ export type Choice = {
   content: string
 }
 
-export type PracticeFrqQuestion = {
+export type PracticeMcqQuestion = {
   name: string
   description: string
   isFinished: boolean

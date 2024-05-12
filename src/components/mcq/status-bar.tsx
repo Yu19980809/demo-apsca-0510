@@ -1,11 +1,11 @@
 import { CircleCheckBig, Flag } from 'lucide-react'
 
-import { PracticeFrqQuestion } from '@/lib/types'
+import { PracticeMcqQuestion } from '@/lib/types'
 import { Button } from '@/components/ui/button'
 import { Hint } from '@/components/ui/hint'
 
 type Props = {
-  data: PracticeFrqQuestion[]
+  data: PracticeMcqQuestion[]
   setActiveQuestionIndex: React.Dispatch<number>
 }
 
@@ -13,6 +13,7 @@ const StatusBar = ({
   data,
   setActiveQuestionIndex
 }: Props) => {
+  console.log('status bar', data)
   const len = data.length
   const formattedData = len > 20 ? data.slice(0, 20) : data
 
