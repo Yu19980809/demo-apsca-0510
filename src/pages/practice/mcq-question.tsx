@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
-import { ChoiceLabel, PracticeMcqQuestion, TopbarType } from '@/lib/types'
+import { PracticeMcqQuestion, TopbarType } from '@/lib/types'
 import { mcqQuestions } from '@/lib/constants'
 import Topbar from '@/components/global/top-bar'
 import Container from '@/components/global/container'

@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { StarIcon, StarFilledIcon } from '@radix-ui/react-icons'
 
-import { ChoiceLabel, PracticeMcqQuestion } from '@/lib/types'
+import { PracticeMcqQuestion } from '@/lib/types'
 import ConfirmModal from '@/components/modals/comfirm-modal'
 import { Button } from '@/components/ui/button'
 import { Hint } from '@/components/ui/hint'

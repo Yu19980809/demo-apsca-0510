@@ -8,7 +8,7 @@ import { Hint } from '@/components/ui/hint'
 import { Button } from '@/components/ui/button'
 
 type Props = {
-  type?: 'learn' | 'question'
+  // type?: 'learn' | 'question'
   isCollapsed?: boolean
   hasResult?: boolean
   hasExplanation?: boolean
@@ -16,7 +16,7 @@ type Props = {
 }
 
 const Description = ({
-  type = 'question',
+  // type = 'question',
   isCollapsed = false,
   hasResult = false,
   hasExplanation = false,

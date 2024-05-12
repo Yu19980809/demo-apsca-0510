@@ -1,10 +1,10 @@
-import { ElementRef, useRef, useState } from 'react'
+import { useState } from 'react'
 import { useParams } from 'react-router-dom'
 
 import { frqList } from '@/lib/constants'
 import Topbar from '@/components/global/top-bar'
-import CodeArea from '@/components/global/code-area'
-import QuestionArea from '@/components/frq/question-area'
+// import CodeArea from '@/components/global/code-area'
+// import QuestionArea from '@/components/frq/question-area'
 import { TopbarType } from '@/lib/types'
 import Description from '@/components/global/description'
 import VerticalResizeBar from '@/components/global/vertical-resize-bar'
@@ -16,36 +16,36 @@ const FrqQuestion = () => {
 
   const [isDescCollapsed, setIsDescCollapsed] = useState<boolean>(false)
 
-  const textRef = useRef<ElementRef<'div'>>(null)
-  const codeRef = useRef<ElementRef<'div'>>(null)
-  const resizeRef = useRef(false)
+  // const textRef = useRef<ElementRef<'div'>>(null)
+  // const codeRef = useRef<ElementRef<'div'>>(null)
+  // const resizeRef = useRef(false)
 
-  const onMouseDown = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    e.preventDefault()
-    e.stopPropagation()
+  // const onMouseDown = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+  //   e.preventDefault()
+  //   e.stopPropagation()
 
-    resizeRef.current = true
-    document.addEventListener('mousemove', onMouseMove)
-    document.addEventListener('mouseup', onMouseUp)
-  }
+  //   resizeRef.current = true
+  //   document.addEventListener('mousemove', onMouseMove)
+  //   document.addEventListener('mouseup', onMouseUp)
+  // }
 
-  const onMouseMove = (e: MouseEvent) => {
-    if (!resizeRef.current) return
+  // const onMouseMove = (e: MouseEvent) => {
+  //   if (!resizeRef.current) return
 
-    let newWidth = e.clientX
+  //   let newWidth = e.clientX
 
-    if (newWidth < 400) newWidth = 400
+  //   if (newWidth < 400) newWidth = 400
 
-    if (textRef.current && codeRef.current) {
-      textRef.current.style.width = `${newWidth}px`
-    }
-  }
+  //   if (textRef.current && codeRef.current) {
+  //     textRef.current.style.width = `${newWidth}px`
+  //   }
+  // }
 
-  const onMouseUp = () => {
-    resizeRef.current = false
-    document.removeEventListener('mousemove', onMouseMove)
-    document.removeEventListener('mouseup', onMouseUp)
-  }
+  // const onMouseUp = () => {
+  //   resizeRef.current = false
+  //   document.removeEventListener('mousemove', onMouseMove)
+  //   document.removeEventListener('mouseup', onMouseUp)
+  // }
 
   // const onWidthReset = () => {
   //   if (!textRef.current) return

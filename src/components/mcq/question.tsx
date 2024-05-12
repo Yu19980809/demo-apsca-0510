@@ -1,4 +1,4 @@
-import { Choice, ChoiceLabel, PracticeMcqQuestion } from '@/lib/types'
+import { Choice, PracticeMcqQuestion } from '@/lib/types'
 import RadioGroup from '@/components/global/radio-group'
 
 type Props = {
